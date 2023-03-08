@@ -1,5 +1,3 @@
-import UIKit
-
 public extension UIView {
     enum Edge {
         case top
@@ -265,7 +263,7 @@ public extension UIView {
 
     @discardableResult
     func maxWidth() -> Self {
-        when(.ProgrammaticViewInitialized) { [weak self] in
+        when(.ProgrammaticViewContentUpdated) { [weak self] in
             guard let self else { return }
             guard let superview = self.superview else { return }
             let constraint = self.widthAnchor.constraint(equalTo: superview.widthAnchor, multiplier: 1)
@@ -277,7 +275,7 @@ public extension UIView {
 
     @discardableResult
     func maxHeight() -> Self {
-        when(.ProgrammaticViewInitialized) { [weak self] in
+        when(.ProgrammaticViewContentUpdated) { [weak self] in
             guard let self else { return }
             guard let superview = self.superview else { return }
             let constraint = self.heightAnchor.constraint(equalTo: superview.heightAnchor, multiplier: 1)
@@ -298,5 +296,31 @@ public extension UIView {
         containerView.addSubview(self)
         pinEdges(padding)
         return containerView
+    }
+
+    @discardableResult
+    func padding(_ edge: Edge, _ padding: CGFloat = 10) -> UIView {
+        let containerView = UIView()
+        containerView.addSubview(self)
+        pinEdge(edge, padding)
+        return containerView
+    }
+
+    func round() -> Self {
+        layer.cornerRadius = min(bounds.width, bounds.height) / 2
+        layer.masksToBounds = true
+        addObserver(self, forKeyPath: #keyPath(bounds), options: .new, context: nil)
+        return self
+    }
+
+    override func observeValue(
+        forKeyPath keyPath: String?,
+        of object: Any?,
+        change: [NSKeyValueChangeKey: Any]?,
+        context: UnsafeMutableRawPointer?
+    ) {
+        if keyPath == #keyPath(bounds) {
+            layer.cornerRadius = min(bounds.width, bounds.height) / 2
+        }
     }
 }

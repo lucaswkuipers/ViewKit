@@ -1,5 +1,3 @@
-import UIKit
-
 protocol ViewControllerDelegate {
     func loadView()
     func viewDidLoad()

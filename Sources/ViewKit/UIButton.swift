@@ -1,5 +1,3 @@
-import UIKit
-
 public extension UIButton {
 
     // MARK: - Configuration
@@ -125,9 +123,9 @@ public extension UIButton {
     // MARK: - Action
 
     @discardableResult
-    func action(_ action: @escaping () -> Void) -> Self {
+    func action(_ action: @escaping (UIButton) -> Void) -> Self {
         addAction(UIAction { _ in
-            action()
+            action(self)
         }, for: .touchUpInside)
         return self
     }

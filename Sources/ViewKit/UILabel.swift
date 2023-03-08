@@ -1,6 +1,9 @@
-import UIKit
-
 public extension UILabel {
+
+    convenience init(_ text: String) {
+        self.init(frame: .zero)
+        self.text = text
+    }
 
     // MARK: - Text Attributes
 

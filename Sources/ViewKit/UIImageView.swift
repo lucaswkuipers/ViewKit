@@ -1,5 +1,3 @@
-import UIKit
-
 public extension UIImageView {
 
     convenience init(systemName: String) {
