@@ -1,5 +1,19 @@
 public extension UIButton {
 
+    // MARK: - State
+
+    @discardableResult
+    func disabled(_ disabled: Bool = true) -> Self {
+        self.isEnabled = !disabled
+        return self
+    }
+
+    @discardableResult
+    func enabled(_ enabled: Bool = true) -> Self {
+        self.isEnabled = enabled
+        return self
+    }
+
     // MARK: - Configuration
 
     @available(iOS 15, *)

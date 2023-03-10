@@ -33,12 +33,6 @@ public extension UITextField {
     }
 
     @discardableResult
-    func isEnabled(_ isEnabled: Bool) -> Self {
-        self.isEnabled = isEnabled
-        return self
-    }
-
-    @discardableResult
     func placeholder(_ placeholder: String) -> Self {
         self.placeholder = placeholder
         return self
@@ -118,19 +112,70 @@ public extension UITextField {
         return self
     }
 
-    // MARK: - Highlight
+    // MARK: - Managing the editing behavior
 
     @discardableResult
-    func isHighlighted(_ isHighlighted: Bool) -> Self {
-        self.isHighlighted = isHighlighted
+    func allowsEditingTextAttributes(_ allowsEditingTextAttributes: Bool = true) -> Self {
+        self.allowsEditingTextAttributes = allowsEditingTextAttributes
         return self
     }
 
-    // MARK: - Border
+    // MARK: - Background appearance
 
     @discardableResult
     func borderStyle(_ borderStyle: BorderStyle) -> Self {
         self.borderStyle = borderStyle
+        return self
+    }
+
+    @discardableResult
+    func background(_ background: UIImage?) -> Self {
+        self.background = background
+        return self
+    }
+
+    @discardableResult
+    func disabledBackground(_ disabledBackground: UIImage?) -> Self {
+        self.disabledBackground = disabledBackground
+        return self
+    }
+
+    // MARK: - Overlay
+
+    @discardableResult
+    func clearButtonMode(_ clearButtonMode: ViewMode) -> Self {
+        self.clearButtonMode = clearButtonMode
+        return self
+    }
+
+    @discardableResult
+    func leftView(_ leftView: UIView?) -> Self {
+        self.leftView = leftView
+        return self
+    }
+
+    @discardableResult
+    func leftViewMode(_ leftViewMode: ViewMode) -> Self {
+        self.leftViewMode = leftViewMode
+        return self
+    }
+
+    @discardableResult
+    func inputView(_ inputView: UIView?) -> Self {
+        self.inputView = inputView
+        return self
+    }
+
+    @discardableResult
+    func inputAccessoryView(_ inputAccessoryView: UIView?) -> Self {
+        self.inputAccessoryView = inputAccessoryView
+        return self
+    }
+
+    @available(iOS 15.0, *)
+    @discardableResult
+    func interactionState(_ interactionState: Any) -> Self {
+        self.interactionState = interactionState
         return self
     }
 
