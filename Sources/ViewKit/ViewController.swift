@@ -28,12 +28,12 @@ extension ViewControllerDelegate {
     func didChangePresses(_ presses: Set<UIPress>, with event: UIPressesEvent?) {}
 }
 
-open class ViewController: UIViewController {
+open class ViewController<V>: UIViewController where V: ProgrammaticView {
     var delegate: ViewControllerDelegate?
     var hideNavigationBar: Bool = false
-    let contentView: UIView
+    let contentView: V
 
-    public init(with view: UIView) {
+    public init(with view: V) {
         self.contentView = view
         super.init(nibName: nil, bundle: nil)
     }
@@ -45,7 +45,7 @@ open class ViewController: UIViewController {
 
     public override func loadView() {
         super.loadView()
-        self.view = contentView
+        self.view = contentView.body
         delegate?.loadView()
     }
 

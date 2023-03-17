@@ -19,7 +19,15 @@ public extension UIStackView {
     }
 }
 
+extension UIView: ProgrammaticViewNew {
+
+    public var body2: some UIView {
+        self
+    }
+}
+
 public class VerticalStack: UIStackView {
+
     public convenience init(
         spacing: CGFloat = 10,
         distribution: Distribution = .fill,

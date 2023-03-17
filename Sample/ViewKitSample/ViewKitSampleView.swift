@@ -1,9 +1,11 @@
 import ViewKit
 
-final class ViewKitSampleView: ProgrammaticView {
+final class ViewKitSampleView: ProgrammaticView, ProgrammaticViewNew {
+    
+    
     var showPassword = false
 
-    override var body: some UIView {
+    var body2: some UIView {
         VerticalStack {
 
             UIImageView(systemName: "person.circle.fill")
@@ -61,6 +63,13 @@ final class ViewKitSampleView: ProgrammaticView {
                 .maxWidth()
 
             Filler()
+        }
+        .padding()
+        .maxSize()
+    }
+
+    override var body: some UIView {
+        VerticalStack {
         }
         .padding()
         .maxSize()

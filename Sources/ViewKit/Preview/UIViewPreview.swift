@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct UIViewPreview<View: UIView>: UIViewRepresentable {
+public struct UIViewPreview<View: ProgrammaticViewNew>: UIViewRepresentable {
     private let view: View
 
     public init(_ builder: @escaping () -> View) {
@@ -8,7 +8,9 @@ public struct UIViewPreview<View: UIView>: UIViewRepresentable {
     }
 
     public func makeUIView(context: Context) -> UIView {
-        return view
+        let mview = UIView()
+        view.attach(to: mview)
+        return mview
     }
 
     public func updateUIView(_ view: UIView, context: Context) {
