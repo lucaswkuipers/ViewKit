@@ -1,7 +1,7 @@
 import SwiftUI
 
 @available(iOS 13.0, *)
-public struct UIViewPreview<View: UIView>: UIViewRepresentable {
+public struct PreviewContainer<View: ProgrammaticView>: UIViewRepresentable {
     private let view: View
 
     public init(_ builder: @escaping () -> View) {
@@ -9,7 +9,7 @@ public struct UIViewPreview<View: UIView>: UIViewRepresentable {
     }
 
     public func makeUIView(context: Context) -> UIView {
-        return view
+        return view.body
     }
 
     public func updateUIView(_ view: UIView, context: Context) {

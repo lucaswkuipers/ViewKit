@@ -1,6 +1,14 @@
+public func For<T: Collection, Content: UIView>(
+    _ items: T,
+    _ builder: (T.Element) -> Content
+) -> [Content] {
+    return items.map(builder)
+}
+
 @resultBuilder
 public struct StackViewBuilder {
     public static func buildBlock(_ children: UIView...) -> [UIView] { children }
+    public static func buildBlock(_ children: [UIView]) -> [UIView] { children }
 }
 
 public extension UIStackView {

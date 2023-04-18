@@ -11,3 +11,7 @@ func when(_ notificationName: Notification.Name, do action: @escaping () -> Void
         action()
     }
 }
+
+func notify(_ notificationNamed: Notification.Name) {
+    NotificationCenter.default.post(.ProgrammaticViewContentUpdated)
+}

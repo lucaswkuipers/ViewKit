@@ -93,7 +93,7 @@ public extension UITextField {
     }
 
     @discardableResult
-    func rightView(@ViewBuilder _ builder: (UITextField) -> UIView) -> Self {
+    func rightView(@ProgrammaticViewBuilder _ builder: (UITextField) -> UIView) -> Self {
         self.rightView(builder(self))
         return self
     }

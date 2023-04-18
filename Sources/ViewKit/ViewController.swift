@@ -28,13 +28,48 @@ extension ViewControllerDelegate {
     func didChangePresses(_ presses: Set<UIPress>, with event: UIPressesEvent?) {}
 }
 
+open class ContainerView: UIView {
+
+    public init(for view: ProgrammaticView) {
+        super.init(frame: .zero)
+
+        let body = view.body
+
+        body.prepareForConstraints()
+
+        add(body)
+
+        constrain([
+            body.topAnchor.constraint(greaterThanOrEqualTo: topAnchor),
+            body.leftAnchor.constraint(greaterThanOrEqualTo: leftAnchor),
+            body.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor),
+            body.rightAnchor.constraint(lessThanOrEqualTo: rightAnchor),
+            body.centerXAnchor.constraint(equalTo: centerXAnchor),
+            body.centerYAnchor.constraint(equalTo: centerYAnchor),
+        ])
+
+        if #available(iOS 13.0, *) {
+            backgroundColor = .systemBackground
+        }
+    }
+
+    @available(*, unavailable)
+    public required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+}
+
 open class ViewController: UIViewController {
     var delegate: ViewControllerDelegate?
     var hideNavigationBar: Bool = false
     let contentView: UIView
 
-    public init(with view: UIView) {
-        self.contentView = view
+    public init(with view: ProgrammaticView) {
+        self.contentView = ContainerView(for: view)
         super.init(nibName: nil, bundle: nil)
     }
 

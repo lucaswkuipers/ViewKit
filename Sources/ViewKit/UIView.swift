@@ -13,6 +13,7 @@ public extension UIView {
     convenience init(_ color: UIColor) {
         self.init()
         backgroundColor(color)
+        maxSize()
     }
 
     // MARK: - Layout
