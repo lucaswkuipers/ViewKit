@@ -1,5 +1,6 @@
 public extension UIImageView {
 
+    @available(iOS 13.0, *)
     convenience init(systemName: String) {
         self.init(image: UIImage(systemName: systemName))
     }
@@ -62,6 +63,7 @@ public extension UIImageView {
 
     // MARK: - Configuring the appearance of symbol images
 
+    @available(iOS 13.0, *)
     @discardableResult
     func preferredSymbolConfiguration(_ preferredSymbolConfiguration: UIImage.SymbolConfiguration) -> Self {
         self.preferredSymbolConfiguration = preferredSymbolConfiguration

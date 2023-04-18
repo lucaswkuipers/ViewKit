@@ -17,7 +17,11 @@ open class ProgrammaticView: UIView {
 
     public init() {
         super.init(frame: .zero)
-        backgroundColor = .systemBackground
+
+        if #available(iOS 13.0, *) {
+            backgroundColor = .systemBackground
+        }
+
         updateContentView()
     }
 

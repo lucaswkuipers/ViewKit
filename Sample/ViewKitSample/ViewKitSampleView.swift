@@ -34,10 +34,11 @@ final class ViewKitSampleView: ProgrammaticView {
                 .rightViewMode(.always)
                 .clearsOnBeginEditing(false)
                 .contentHuggingPriority(.required, for: .vertical)
-                .rightView { textField in
-                    UIButton()
+                .rightView { [weak self] textField in
+                    guard let self else { return textField }
+                    return UIButton()
                         .tintColor(.systemGray)
-                        .image(systemName: showPassword ? "eye" : "eye.slash")
+                        .image(systemName: self.showPassword ? "eye" : "eye.slash")
                         .action { [weak self] button in
                             guard let self else { return }
                             self.showPassword.toggle()
@@ -67,7 +68,8 @@ final class ViewKitSampleView: ProgrammaticView {
     }
 }
 
-#if canImport(SwiftUI)
+// MARK: - Previews
+
 import SwiftUI
 
 struct ViewKitSampleView_Previews: PreviewProvider {
@@ -77,4 +79,3 @@ struct ViewKitSampleView_Previews: PreviewProvider {
         }
     }
 }
-#endif

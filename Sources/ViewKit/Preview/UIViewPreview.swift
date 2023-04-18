@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 13.0, *)
 public struct UIViewPreview<View: UIView>: UIViewRepresentable {
     private let view: View
 

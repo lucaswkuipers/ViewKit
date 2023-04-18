@@ -77,6 +77,7 @@ public extension UIButton {
         return self
     }
 
+    @available(iOS 13.0, *)
     @discardableResult
     func image(systemName: String, for state: UIControl.State = .normal) -> Self {
         self.setImage(UIImage(systemName: systemName), for: state)
@@ -89,6 +90,7 @@ public extension UIButton {
         return self
     }
 
+    @available(iOS 13.0, *)
     @discardableResult
     func preferredSymbolConfiguration(_ preferredSymbolConfiguration: UIImage.SymbolConfiguration?, forImageIn state: UIControl.State) -> Self {
         self.setPreferredSymbolConfiguration(preferredSymbolConfiguration, forImageIn: state)
@@ -97,6 +99,7 @@ public extension UIButton {
 
     // MARK: - Specifying the role
 
+    @available(iOS 14.0, *)
     @discardableResult
     func role(_ role: UIButton.Role) -> Self {
         self.role = role
@@ -114,6 +117,7 @@ public extension UIButton {
 
     // MARK: - Supporting menu and toggle buttons
 
+    @available(iOS 14.0, *)
     @discardableResult
     func menu(_ menu: UIMenu?) -> Self {
         self.menu = menu
@@ -136,6 +140,7 @@ public extension UIButton {
 
     // MARK: - Action
 
+    @available(iOS 14.0, *)
     @discardableResult
     func action(_ action: @escaping (UIButton) -> Void) -> Self {
         addAction(UIAction { _ in

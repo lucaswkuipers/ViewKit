@@ -18,6 +18,8 @@ struct SwiftUISampleView: View {
     }
 }
 
+// MARK: - Previews
+
 struct SwiftUISampleView_Previews: PreviewProvider {
     static var previews: some View {
         SwiftUISampleView()

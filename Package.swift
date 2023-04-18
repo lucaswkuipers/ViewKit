@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "ViewKit",
     platforms: [
-        .iOS(.v14)
+        .iOS(.v11)
     ],
     products: [
         .library(

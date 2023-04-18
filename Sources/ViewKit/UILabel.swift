@@ -43,6 +43,7 @@ public extension UILabel {
         return self
     }
 
+    @available(iOS 14.0, *)
     @discardableResult
     func lineBreakStrategy(_ lineBreakStrategy: NSParagraphStyle.LineBreakStrategy) -> Self {
         self.lineBreakStrategy = lineBreakStrategy
