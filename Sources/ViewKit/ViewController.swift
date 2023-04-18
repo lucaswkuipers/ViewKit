@@ -71,6 +71,7 @@ open class ViewController: UIViewController {
     public init(with view: ProgrammaticView) {
         self.contentView = ContainerView(for: view)
         super.init(nibName: nil, bundle: nil)
+        notify(.ProgrammaticViewContentUpdated)
     }
 
     @available(*, unavailable)
