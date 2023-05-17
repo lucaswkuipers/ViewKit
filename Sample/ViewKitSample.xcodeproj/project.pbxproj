@@ -12,7 +12,6 @@
 		A068A82C29B1FD92003BFD66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A068A82B29B1FD92003BFD66 /* Assets.xcassets */; };
 		A068A82F29B1FD92003BFD66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A068A82D29B1FD92003BFD66 /* LaunchScreen.storyboard */; };
 		A068A83A29B1FEEB003BFD66 /* ViewKit in Frameworks */ = {isa = PBXBuildFile; productRef = A068A83929B1FEEB003BFD66 /* ViewKit */; };
-		A0D1539229B6709F00141606 /* SwiftUISampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1539129B6709F00141606 /* SwiftUISampleView.swift */; };
 		A0D1539429B670B300141606 /* ViewKitSampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D1539329B670B300141606 /* ViewKitSampleView.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +23,6 @@
 		A068A82B29B1FD92003BFD66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A068A82E29B1FD92003BFD66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A068A83029B1FD92003BFD66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A0D1539129B6709F00141606 /* SwiftUISampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUISampleView.swift; sourceTree = "<group>"; };
 		A0D1539329B670B300141606 /* ViewKitSampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewKitSampleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,7 +64,6 @@
 				A068A82B29B1FD92003BFD66 /* Assets.xcassets */,
 				A068A82D29B1FD92003BFD66 /* LaunchScreen.storyboard */,
 				A068A83029B1FD92003BFD66 /* Info.plist */,
-				A0D1539129B6709F00141606 /* SwiftUISampleView.swift */,
 				A0D1539329B670B300141606 /* ViewKitSampleView.swift */,
 			);
 			path = ViewKitSample;
@@ -160,7 +157,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0D1539229B6709F00141606 /* SwiftUISampleView.swift in Sources */,
 				A068A82329B1FD91003BFD66 /* AppDelegate.swift in Sources */,
 				A0D1539429B670B300141606 /* ViewKitSampleView.swift in Sources */,
 				A068A82529B1FD91003BFD66 /* SceneDelegate.swift in Sources */,
