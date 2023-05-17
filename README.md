@@ -111,4 +111,4 @@ ViewKit is available under the MIT license. See the LICENSE file for more inform
 
 ## Swift Package Index
 
-Check out on Swift Package Index: [https://swiftpackageindex.com/lucaswkuipers/ViewKit](https://swiftpackageindex.com/lucaswkuipers/ViewKit
+Check out on Swift Package Index: [https://swiftpackageindex.com/lucaswkuipers/ViewKit](https://swiftpackageindex.com/lucaswkuipers/ViewKit)
