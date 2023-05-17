@@ -51,9 +51,17 @@ final class UILabelTests: XCTestCase {
     func test_lineBreakStrategy_modiefiesLabelCorrectly() {
         let sut = UILabel()
 
-        sut.lineBreakStrategy(.hangulWordPriority)
+        if #available(iOS 14.0, *) {
+            sut.lineBreakStrategy(.hangulWordPriority)
+        } else {
+            // Fallback on earlier versions
+        }
 
-        XCTAssertEqual(sut.lineBreakStrategy, .hangulWordPriority)
+        if #available(iOS 14.0, *) {
+            XCTAssertEqual(sut.lineBreakStrategy, .hangulWordPriority)
+        } else {
+            // Fallback on earlier versions
+        }
     }
     func test_showsExpansionTextWhenTruncated_modiefiesLabelCorrectly() {
         let sut = UILabel()
