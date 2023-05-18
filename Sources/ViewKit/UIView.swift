@@ -204,6 +204,21 @@ public extension UIView {
         self.sizeToFit()
         return self
     }
+    
+    // MARK: - Gestures
+    
+    @discardableResult
+    func tapGesture(numberOfTapsRequired: Int = 1,  _ completion: @escaping () -> Void) -> Self {
+        let tapGesture = ClosureTapGestureRecognizer()
+        tapGesture.numberOfTapsRequired = numberOfTapsRequired
+        
+        tapGesture.addAction {
+            completion()
+        }
+        
+        self.addGestureRecognizer(tapGesture)
+        return self
+    }
 }
 
 public extension UIView {
