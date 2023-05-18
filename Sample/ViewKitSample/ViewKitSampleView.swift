@@ -15,6 +15,9 @@ final class ViewKitSampleView: ProgrammaticView {
                 .contentMode(.scaleAspectFit)
                 .size(160)
                 .padding(50)
+                .tapGesture(numberOfTapsRequired: 2) {
+                    print("Hello world")
+                }
 
             UITextField()
                 .tag(0)
