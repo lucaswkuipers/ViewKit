@@ -7,8 +7,10 @@ public class ConstraintBuilder {
         self.view.translatesAutoresizingMaskIntoConstraints = false
     }
 
-    public func activate() {
+    @discardableResult
+    public func activate() -> UIView {
         NSLayoutConstraint.activate(constraints)
+        return view
     }
 }
 
