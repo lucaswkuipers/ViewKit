@@ -204,21 +204,107 @@ public extension UIView {
         self.sizeToFit()
         return self
     }
-    
+
+    // MARK: - Accessbility
+
+    func accessibilityIdentifier(_ identifier: String) -> Self {
+        accessibilityIdentifier = identifier
+        return self
+    }
+
+    @discardableResult
+    func accessibilityFrame(_ frame: CGRect) -> Self {
+        self.accessibilityFrame = frame
+        return self
+    }
+
+    @discardableResult
+    func accessibilityLabel(_ label: String) -> Self {
+        self.accessibilityLabel = label
+        return self
+    }
+
     // MARK: - Gestures
     
     @discardableResult
-    func tapGesture(numberOfTapsRequired: Int = 1,  _ completion: @escaping () -> Void) -> Self {
+    func onTap(numberOfTapsRequired: Int = 1,  _ completion: @escaping (Self) -> Void) -> Self {
         let tapGesture = ClosureTapGestureRecognizer()
         tapGesture.numberOfTapsRequired = numberOfTapsRequired
         
         tapGesture.addAction {
-            completion()
+            completion(self)
         }
         
-        self.addGestureRecognizer(tapGesture)
+        addGestureRecognizer(tapGesture)
         return self
     }
+
+    @discardableResult
+    func onLongPress(minimumPressDuration: TimeInterval = 0.5, _ completion: @escaping (Self) -> Void) -> Self {
+        let longPressGesture = ClosureLongPressGestureRecognizer()
+        longPressGesture.minimumPressDuration = minimumPressDuration
+
+        longPressGesture.addAction {
+            completion(self)
+        }
+
+        addGestureRecognizer(longPressGesture)
+        return self
+    }
+
+    @discardableResult
+    func onSwipe(direction: UISwipeGestureRecognizer.Direction = .right, _ completion: @escaping (Self) -> Void) -> Self {
+        let swipeGesture = ClosureSwipeGestureRecognizer()
+        swipeGesture.direction = direction
+
+        swipeGesture.addAction {
+            completion(self)
+        }
+
+        addGestureRecognizer(swipeGesture)
+        return self
+    }
+
+    @discardableResult
+    func onPinch(_ completion: @escaping (Self) -> Void) -> Self {
+        let pinchGesture = ClosurePinchGestureRecognizer()
+
+        pinchGesture.addAction {
+            completion(self)
+        }
+
+        addGestureRecognizer(pinchGesture)
+        return self
+    }
+
+    // MARK: - Gestures
+
+    @discardableResult
+    func onRotation(_ completion: @escaping (Self) -> Void) -> Self {
+        let rotationGesture = ClosureRotationGestureRecognizer()
+
+        rotationGesture.addAction {
+            completion(self)
+        }
+
+        addGestureRecognizer(rotationGesture)
+        return self
+    }
+
+    @discardableResult
+    func onPan(minimumNumberOfTouches: Int = 1, maximumNumberOfTouches: Int = 2, _ completion: @escaping (Self) -> Void) -> Self {
+        let panGesture = ClosurePanGestureRecognizer()
+        panGesture.minimumNumberOfTouches = minimumNumberOfTouches
+        panGesture.maximumNumberOfTouches = maximumNumberOfTouches
+
+        panGesture.addAction {
+            completion(self)
+        }
+
+        addGestureRecognizer(panGesture)
+        return self
+    }
+
 }
 
 public extension UIView {
