@@ -65,13 +65,13 @@ public extension UILabel {
     // MARK: - Sizing text
 
     @discardableResult
-    func adjustsFontSizeToFitWidth(_ adjustsFontSizeToFitWidth: Bool) -> Self {
+    func adjustsFontSizeToFitWidth(_ adjustsFontSizeToFitWidth: Bool = true) -> Self {
         self.adjustsFontSizeToFitWidth = adjustsFontSizeToFitWidth
         return self
     }
 
     @discardableResult
-    func allowsDefaultTighteningForTruncation(_ allowsDefaultTighteningForTruncation: Bool) -> Self {
+    func allowsDefaultTighteningForTruncation(_ allowsDefaultTighteningForTruncation: Bool = true) -> Self {
         self.allowsDefaultTighteningForTruncation = allowsDefaultTighteningForTruncation
         return self
     }

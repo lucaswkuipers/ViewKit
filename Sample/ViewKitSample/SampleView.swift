@@ -3,7 +3,6 @@ import ViewKit
 final class SampleView: ProgrammaticView {
     var body: UIView {
         VerticalStack {
-
             UIImageView(systemName: "person.circle.fill")
                 .contentMode(.scaleAspectFit)
                 .size(160)
