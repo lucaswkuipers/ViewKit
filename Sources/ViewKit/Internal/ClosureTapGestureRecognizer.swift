@@ -1,4 +1,4 @@
-class ClosureTapGestureRecognizer: UITapGestureRecognizer {
+final class ClosureTapGestureRecognizer: UITapGestureRecognizer {
     private var actionClosure: (() -> Void)?
     
     func addAction(_ closure: @escaping () -> Void) {
