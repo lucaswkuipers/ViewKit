@@ -89,4 +89,10 @@ public extension UIImageView {
         self.contentMode = mode
         return self
     }
+
+    @discardableResult
+    func renderingMode(_ mode: UIImage.RenderingMode = .automatic) -> Self {
+        self.image = image?.withRenderingMode(mode)
+        return self
+    }
 }
