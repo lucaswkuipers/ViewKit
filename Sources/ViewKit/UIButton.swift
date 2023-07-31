@@ -156,3 +156,118 @@ public extension UIButton {
         self.setTitle(title, for: .normal)
     }
 }
+
+// MARK: - Title Label
+
+public extension UIButton {
+
+        @discardableResult
+        func text(_ text: String?) -> Self {
+            titleLabel?.text = text
+            return self
+        }
+
+        @discardableResult
+        func attributedText(_ attributedText: NSAttributedString?) -> Self {
+            titleLabel?.attributedText = attributedText
+            return self
+        }
+
+        @discardableResult
+        func font(_ font: UIFont?) -> Self {
+            titleLabel?.font = font
+            return self
+        }
+
+        @discardableResult
+        func textColor(_ textColor: UIColor?) -> Self {
+            titleLabel?.textColor = textColor
+            return self
+        }
+
+        @discardableResult
+        func textAlignment(_ textAlignment: NSTextAlignment) -> Self {
+            titleLabel?.textAlignment = textAlignment
+            return self
+        }
+
+        @discardableResult
+        func lineBreakMode(_ lineBreakMode: NSLineBreakMode) -> Self {
+            titleLabel?.lineBreakMode = lineBreakMode
+            return self
+        }
+
+        @available(iOS 14.0, *)
+        @discardableResult
+        func lineBreakStrategy(_ lineBreakStrategy: NSParagraphStyle.LineBreakStrategy) -> Self {
+            titleLabel?.lineBreakStrategy = lineBreakStrategy
+            return self
+        }
+
+        @discardableResult
+        func showsExpansionTextWhenTruncated(_ showsExpansionTextWhenTruncated: Bool) -> Self {
+            titleLabel?.showsExpansionTextWhenTruncated = showsExpansionTextWhenTruncated
+            return self
+        }
+
+        // MARK: - Sizing text
+
+        @discardableResult
+        func adjustsFontSizeToFitWidth(_ adjustsFontSizeToFitWidth: Bool) -> Self {
+            titleLabel?.adjustsFontSizeToFitWidth = adjustsFontSizeToFitWidth
+            return self
+        }
+
+        @discardableResult
+        func allowsDefaultTighteningForTruncation(_ allowsDefaultTighteningForTruncation: Bool) -> Self {
+            titleLabel?.allowsDefaultTighteningForTruncation = allowsDefaultTighteningForTruncation
+            return self
+        }
+
+        @discardableResult
+        func baselineAdjustment(_ baselineAdjustment: UIBaselineAdjustment) -> Self {
+            titleLabel?.baselineAdjustment = baselineAdjustment
+            return self
+        }
+
+        @discardableResult
+        func minimumScaleFactor(_ minimumScaleFactor: CGFloat) -> Self {
+            titleLabel?.minimumScaleFactor = minimumScaleFactor
+            return self
+        }
+
+        @discardableResult
+        func numberOfLines(_ numberOfLines: Int) -> Self {
+            titleLabel?.numberOfLines = numberOfLines
+            return self
+        }
+
+        // MARK: - Highlight
+
+        @discardableResult
+        func highlightedTextColor(_ highlightedTextColor: UIColor?) -> Self {
+            titleLabel?.highlightedTextColor = highlightedTextColor
+            return self
+        }
+
+        // MARK: - Shadow
+
+        @discardableResult
+        func shadowColor(_ shadowColor: UIColor?) -> Self {
+            titleLabel?.shadowColor = shadowColor
+            return self
+        }
+
+        @discardableResult
+        func shadowOffset(_ shadowOffset: CGSize) -> Self {
+            titleLabel?.shadowOffset = shadowOffset
+            return self
+        }
+
+        @discardableResult
+        func preferredMaxLayoutWidth(_ preferredMaxLayoutWidth: CGFloat) -> Self {
+            titleLabel?.preferredMaxLayoutWidth = preferredMaxLayoutWidth
+            return self
+        }
+
+}
