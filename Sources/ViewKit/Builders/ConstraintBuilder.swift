@@ -20,6 +20,14 @@ public extension UIView {
     }
 }
 
+public extension UIView {
+    func addSubviews(@ProgrammaticViewBuilder _ builder: () -> [UIView]) {
+        for view in builder() {
+            addSubview(view)
+        }
+    }
+}
+
 // MARK: - No Storing
 
 public extension ConstraintBuilder {

@@ -28,4 +28,10 @@ public extension UIStackView {
         self.isLayoutMarginsRelativeArrangement = isLayoutMarginsRelativeArrangement
         return self
     }
+
+    func addArrangedSubviews(@StackViewBuilder _ builder: () -> [UIView]) {
+        for view in builder() {
+            addArrangedSubview(view)
+        }
+    }
 }
