@@ -19,13 +19,19 @@ public extension UIView {
     // MARK: - Layout
 
     @discardableResult
-    func add(_ view: UIView) -> Self {
+    func addingSubview(_ view: UIView) -> Self {
         addSubview(view)
         return self
     }
 
     func prepareForConstraints() {
         translatesAutoresizingMaskIntoConstraints = false
+    }
+
+    @discardableResult
+    func preparedForConstraints() -> Self {
+        translatesAutoresizingMaskIntoConstraints = false
+        return self
     }
 
     @discardableResult

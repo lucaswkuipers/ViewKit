@@ -37,7 +37,7 @@ open class ContainerView: UIView {
 
         body.prepareForConstraints()
 
-        add(body)
+        addingSubview(body)
 
         constrain([
             body.topAnchor.constraint(greaterThanOrEqualTo: topAnchor),

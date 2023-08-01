@@ -21,10 +21,12 @@ public extension UIView {
 }
 
 public extension UIView {
-    func addSubviews(@ProgrammaticViewBuilder _ builder: () -> [UIView]) {
+    @discardableResult
+    func addingSubviews(@ProgrammaticViewBuilder _ builder: () -> [UIView]) -> Self {
         for view in builder() {
             addSubview(view)
         }
+        return self
     }
 }
 

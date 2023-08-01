@@ -9,7 +9,7 @@ public struct ProgrammaticViewBuilder {
 
             child.prepareForConstraints()
 
-            container.add(child)
+            container.addingSubview(child)
 
             container.constrain([
                 child.topAnchor.constraint(greaterThanOrEqualTo: container.topAnchor),
