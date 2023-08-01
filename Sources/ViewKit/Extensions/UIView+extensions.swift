@@ -24,10 +24,8 @@ public extension UIView {
         return self
     }
 
-    @discardableResult
-    func prepareForConstraints() -> Self {
+    func prepareForConstraints() {
         translatesAutoresizingMaskIntoConstraints = false
-        return self
     }
 
     @discardableResult
