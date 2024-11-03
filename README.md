@@ -99,7 +99,7 @@ struct MyView_Previews: PreviewProvider {
 }
 ```
 
-## Advanced Concepts
+## Concepts
 
 ### Result Builders and Fluent Interfaces
 
